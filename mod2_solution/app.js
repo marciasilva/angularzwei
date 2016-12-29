@@ -9,8 +9,6 @@ angular.module('ShoppingListCheckOff', [])
 ToBuyController.$inject = ['ShoppingListCheckOffService'];
 function ToBuyController(ShoppingListCheckOffService) {
   var showList = this;
-  var toBuyMessage = "Everything is bought!";
-
   showList.items = ShoppingListCheckOffService.getItemsToBuy();
 
   showList.buyItem = function (itemIndex) {
@@ -22,7 +20,6 @@ AlreadyBoughtController.$inject = ['ShoppingListCheckOffService'];
 function AlreadyBoughtController(ShoppingListCheckOffService) {
   var boughtItems = this;
   boughtItems.items = ShoppingListCheckOffService.getBoughtList();
-  var boughtMessage = "Nothing bought yet";
 }
 
 
