@@ -8,19 +8,21 @@
   function NarrowItDownController(MenuSearchService,$scope){
     var narrowDownController = this;
     $scope.searchTerm = "";
-    this.found = [];
+    $scope.found = [];
     this.getMatchedMenuItems = function(){
-      this.found = MenuSearchService.getMatchedMenuItems($scope.searchTerm);
+      MenuSearchService.getMatchedMenuItems($scope.searchTerm)
+        .then(function(found) {
+          $scope.found = found;
+        })
     }
+
   }
 
   MenuSearchService.$inject = ['$http'];
   function MenuSearchService($http){
     var menuService = this;
-    //https://davids-restaurant.herokuapp.com/menu_items.json
     menuService.getMatchedMenuItems = function(searchTerm){
-      console.log('search: ' + searchTerm);
-      $http({
+      return $http({
         method: 'GET',
         url: ("https://davids-restaurant.herokuapp.com/menu_items.json")
       }).then(function successCallback(response) {
