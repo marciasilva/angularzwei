@@ -9,7 +9,8 @@
     <script src="app.js"></script>
   </head>
 <body>
-   <div class="container" ng-controller = 'NarrowItDownController as narrowDownCtrol'>
+  <div class="container" ng-controller = 'NarrowItDownController as narrowDownCtrol' >
+   <div class="container">
     <h1>Narrow Down Your Chinese Menu Choice</h1>
 
     <div class="form-group">
@@ -18,15 +19,10 @@
     <div class="form-group narrow-button">
       <button class="btn btn-primary" ng-click='narrowDownCtrol.getMatchedMenuItems();'>Narrow It Down For Me!</button>
     </div>
-
-    <!--<div class="emptyMessage" ng-if ="narrowDownCtrol.found.length == 0"> Nothing found! </div>
-     found-items should be implemented as a component -->
-      Teste
-     {{scope.id}}
-     {{narrowDownCtrol.found}}
-     {{found}}
-    <found-items found-items="...." on-remove="...."></found-items>
   </div>
-
-</body>
+    <p>
+    <div class="emptyMessage" ng-show="found.length == 0"> Nothing found! </div>
+    <found-items></found-items>
+    </div>
+  </body>
 </html>
