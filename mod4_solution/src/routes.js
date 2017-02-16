@@ -23,13 +23,27 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
   .state('categoriesListState', {
     url: '/categories',
     templateUrl: 'src/templates/main-categories.template.html',
-    controller: 'MainCategoriesController as mainList',
+    controller: 'CategoriesController as mainList',
     resolve: {
-      items: ['MenuDataService', function (MenuDataService) {
+      itemsResolve: ['MenuDataService', function (MenuDataService) {
         return MenuDataService.getAllCategories();
       }]
     }
+  })
+
+  .state('detailCategoryState', {
+    url: '/items',
+    templateUrl:'src/templates/main-items.template.html',
+    controller:'ItemsController as detailCategoryList',
+    resolve:{
+      itemsDetailResolve: ['MenuDataService', function (MenuDataService) {
+        return MenuDataService.getItemsForCategory();
+      }]
+    }
   });
+
+
+  ;
 }
 
 })();

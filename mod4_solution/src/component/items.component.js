@@ -4,17 +4,10 @@
 
   angular.module('data')
   .component('itemsList',{
-    templateUrl: 'items.html',
-    controller: ItemsController,
+    templateUrl: 'src/templates/categoryDetailItems.template.html',
     bindings: {
       items: '<',
     }
   });
-
-
-  function ItemsController(){
-    var $ctrl = this;
-
-  }
 
 })();
