@@ -1,38 +1,37 @@
-<html lang="en">
-
-<head>
-    <title>Welcome to our Restaurant</title>
-
-    <script src="js/angular.min.js"></script>
-    <script src="js/menuapp.module.js"></script>
-    <script src="js/data.module.js"></script>
-    <script src="js/categories.component.js"></script>
-    <script src="js/items.component.js"></script>
-    <script src="js/menudata.service.js"></script>
-    <script src="js/routes.js"></script>
-
+<!DOCTYPE html>
+<html ng-app='MenuApp'>
+  <head>
+    <meta charset="utf-8">
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="css/business-casual.css" rel="stylesheet">
-</head>
+    <title>Restaurant Menu</title>
+  </head>
+  <body>
+    <ui-view></ui-view>
 
-<body ng-app = "MenuApp">
-<div class="col-lg-12 text-center">
-  <h1 class="brand-name">Welcome to our Restaurant</h1>
+    <!-- Libraries -->
+    <script src="lib/angular.min.js"></script>
+    <script src="lib/angular-ui-router.min.js"></script>
 
-  <h2 class="intro-text">
-    <small>Please, check the categories on the link bellow:</small>
-  </h2>
-  <hr class="tagline-divider">
-    <h2>
-        <a href=categories.html>
-          <strong>Categories</strong>
-        </a>
-    </h2>
-</div>
+    <!-- Modules -->
+    <script src="src/modules/menuapp.module.js"></script>
+    <script src="src/modules/data.module.js"></script>
 
-</body>
+    <!-- Controllers -->
+    <script src="src/controllers/mainCategories.controller.js"></script>
 
+    <!-- Components -->
+    <script src="src/component/categories.component.js"></script>
+
+    <!-- Routes -->
+    <script src="src/routes.js"></script>
+
+    <!-- 'ShoppingList' module artifacts -->
+
+    <script src="src/services/menudata.service.js"></script>
+
+  </body>
 </html>
