@@ -1,0 +1,14 @@
+
+<!-- Bootstrap Core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Custom CSS -->
+<link href="css/business-casual.css" rel="stylesheet">
+
+<div class="panel panel-default" ng-repeat="item in $ctrl.items">
+    <a ui-sref="detailCategoryState">
+      <div class="panel-heading body intro-text">
+        {{item.name}}
+      </div>
+    </a>
+    <div ng-if="item.special_instructions" class="panel-body brand-before">{{item.special_instructions}}</div>
+</div>
